@@ -1,7 +1,7 @@
 import findWithRegex from 'find-with-regex';
-import emojione from 'emojione';
+import { unicodeRegexp as emojioneUnicodeRegexp } from 'emojione';
 
-const unicodeRegex = new RegExp(emojione.unicodeRegexp, 'g');
+const unicodeRegex = new RegExp(emojioneUnicodeRegexp, 'g');
 
 export default (contentBlock: Object, callback: Function) => {
   findWithRegex(unicodeRegex, contentBlock, callback);

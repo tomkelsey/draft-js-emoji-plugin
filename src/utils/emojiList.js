@@ -1,12 +1,12 @@
-import emojione from 'emojione';
+import { emojioneList } from 'emojione';
 
 const newEmojiListWithOutPriorityList = (priorityList) => {
   const list = {};
-  for (const key in emojione.emojioneList) { // eslint-disable-line no-restricted-syntax
+  for (const key in emojioneList) { // eslint-disable-line no-restricted-syntax
     if (priorityList.hasOwnProperty(key)) { // eslint-disable-line no-prototype-builtins
       continue; // eslint-disable-line no-continue
     }
-    list[key] = emojione.emojioneList[key].unicode;
+    list[key] = emojioneList[key].unicode;
   }
 
   return { ...priorityList, ...list };
